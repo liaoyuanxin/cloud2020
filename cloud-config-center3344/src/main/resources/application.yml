@@ -8,12 +8,24 @@ spring:
     config:
       server:
         git:
-          uri:
-            search-paths:
-              - springcloud-config
+          uri: https://github.com/liaoyuanxin/cloud2020
+          search-paths:
+            - configcenter
       label: master
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

@@ -66,6 +66,10 @@ public class PaymentController {
         return this.serverPort;
     }
 
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin(){
+        return "hi,i am payment zipkin server fall back!!!!!!!!!!!!!!!!!!!!!";
+    }
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout() {
         try {

@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: cloud-payment-service
+    zipkin:
+      base-url: http://localhost:9411
+      sleuth:
+        sampler:
+        probability: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,7 +19,7 @@ spring:
 eureka:
   client:
     register-with-eureka: true
-    fetchRegistry: true
+    fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
   instance:
